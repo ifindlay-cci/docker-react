@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+  before_install:
+    - docker build -t ifindlay-cci/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true ifindlay-cci/docker-react npm run test
