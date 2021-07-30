@@ -6,7 +6,7 @@ sudo:
 services:
   - docker
 
-  before_install:
+before_install:
     - docker build -t ifindlay-cci/docker-react -f Dockerfile.dev .
 
 script:
